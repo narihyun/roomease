@@ -301,7 +301,7 @@ useEffect(() => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-gray-500 font-bold">집 정보를 불러오는 중...</p>
@@ -331,7 +331,7 @@ useEffect(() => {
   }
 
   return (
-    <div className="min-h-screen bg-white flex flex-col font-sans max-w-md mx-auto relative shadow-2xl overflow-hidden">
+    <div className="h-screen bg-white flex flex-col font-sans max-w-md mx-auto relative shadow-2xl overflow-hidden">
       <button 
         onClick={exitDemo} 
         className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 transition-colors z-50 rounded-full hover:bg-gray-100"
@@ -340,14 +340,14 @@ useEffect(() => {
         <X size={24} />
       </button>
 
-      <div className="w-full bg-gray-100 h-1">
+      <div className="w-full bg-gray-100 h-1 flex-shrink-0">
         <div 
           className="bg-primary h-1 transition-all duration-500 ease-out" 
           style={{ width: `${(step / 5) * 100}%` }}
         />
       </div>
 
-      <div className="flex-1 p-8 flex flex-col justify-center animate-fade-in pb-12">
+      <div className="flex-1 overflow-y-auto p-8">
         
         {/* Step 1: Identity */}
         {step === 1 && (
@@ -539,12 +539,20 @@ useEffect(() => {
                     </div>
                 </div>
 
-                <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-white via-white to-transparent pointer-events-none">
-                    <button onClick={() => setStep(4)} disabled={tasks.length === 0} className="w-full bg-secondary text-white font-bold py-4 rounded-2xl flex items-center justify-center gap-2 hover:bg-gray-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-xl pointer-events-auto">{tasks.length === 0 ? '규칙을 하나 이상 추가해주세요' : '다음으로'} <ArrowRight size={18} /></button>
+                
+                <div className="sticky bottom-0 left-0 right-0 -mx-8 px-8 py-8 bg-gradient-to-t from-white via-white to-transparent">
+                  <button 
+                    onClick={() => setStep(4)} 
+                    disabled={tasks.length === 0} 
+                    className="w-full bg-secondary text-white font-bold py-4 rounded-2xl flex items-center justify-center gap-2 hover:bg-gray-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {tasks.length === 0 ? '규칙을 하나 이상 추가해주세요' : '다음으로'} <ArrowRight size={18} />
+                  </button>
                 </div>
+
               </>
             ) : (
-              <div className="flex flex-col h-full animate-slide-up">
+                <div className="flex flex-col h-full animate-slide-up pt-16 pb-4">
                  <div className="flex items-center justify-between mb-6">
                     <h2 className="text-xl font-bold text-secondary">{editingTaskId ? '규칙 수정하기' : (customMode ? '새로운 규칙' : ruleTitle)}</h2>
                     <button onClick={() => setIsEditing(false)} className="p-2 bg-gray-100 rounded-full"><X size={18}/></button>
@@ -578,8 +586,26 @@ useEffect(() => {
                         {roomies.map(user => {
                           const isSelected = selectedAssignees.includes(user.id);
                           return (
-                            <button key={user.id} onClick={() => toggleAssignee(user.id)} className={`flex flex-col items-center flex-shrink-0 transition-all ${isSelected ? 'opacity-100 scale-105' : 'opacity-40 grayscale'}`}>
-                              <div className={`relative ${isSelected ? 'ring-2 ring-primary ring-offset-2 rounded-full' : ''}`}><img src={user.avatar} className="w-12 h-12 rounded-full bg-gray-100" />{assignmentType === 'Rotate' && isSelected && (<span className="absolute -right-1 -bottom-1 bg-primary text-white text-[10px] px-1.5 rounded-full border border-white">Start</span>)}{assignmentType === 'Fixed' && isSelected && (<span className="absolute -right-1 -bottom-1 bg-primary text-white p-1 rounded-full border border-white"><CheckCircle size={10} /></span>)}</div><span className="text-xs mt-1 font-medium">{user.name}</span>
+                            <button 
+                              key={user.id} 
+                              onClick={() => toggleAssignee(user.id)} 
+                              className={`flex flex-col items-center flex-shrink-0 transition-all p-1 ${isSelected ? 'opacity-100 scale-105' : 'opacity-40 grayscale'}`}
+                            >
+                              {/* ↑ p-1 추가 */}
+                              <div className={`relative ${isSelected ? 'ring-2 ring-primary ring-offset-1 rounded-full' : ''}`}>
+                                <img src={user.avatar} className="w-10 h-10 rounded-full bg-gray-100" />
+                                {assignmentType === 'Rotate' && isSelected && (
+                                  <span className="absolute -right-1 -bottom-1 bg-primary text-white text-[10px] px-1.5 rounded-full border border-white">
+                                    Start
+                                  </span>
+                                )}
+                                {assignmentType === 'Fixed' && isSelected && (
+                                  <span className="absolute -right-1 -bottom-1 bg-primary text-white p-1 rounded-full border border-white">
+                                    <CheckCircle size={10} />
+                                  </span>
+                                )}
+                              </div>
+                              <span className="text-xs mt-1 font-medium">{user.name}</span>
                             </button>
                           );
                         })}
