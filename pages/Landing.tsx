@@ -105,7 +105,7 @@ const Landing: React.FC = () => {
               }}
               className="group bg-white border-2 border-green-100 text-secondary px-8 py-4 rounded-full text-lg font-bold hover:bg-green-50 hover:border-green-200 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
             >
-              정식 출시 알림 받기 <span className="group-hover:translate-x-1 transition-transform">🔔</span>
+              정식 출시 등록하고 기프티콘 받기 <span className="group-hover:translate-x-1 transition-transform">🔔</span>
             </button>
           </div>
           
