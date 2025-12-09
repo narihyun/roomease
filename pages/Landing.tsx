@@ -89,13 +89,15 @@ const Landing: React.FC = () => {
           </h1>
           
           <p className="text-lg sm:text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed font-medium animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+             참다가 말하면 <strong>'예민한 사람'</strong> 취급 받고, <br/> 가만히 있자니 나만 <strong>'손해 보는'</strong> 기분.<br/><br></br>
              한 방에서 24시간 붙어 있다 보면, <strong>말하기 애매한 순간</strong>들이 꼭 오니까요.<br/>
-             친구 사이 멀어지지 않게, <strong>시스템</strong>으로 해결하세요.
           </p>
+
+         
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             <button onClick={startOnboarding} className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full text-lg font-bold shadow-xl shadow-green-200 transition-all hover:scale-105 flex items-center justify-center gap-2 ring-4 ring-green-100">
-              지금 우리 방 약속 만들기 <ArrowRight size={22} />
+              3분 만에 우리 방 약속 만들기 <ArrowRight size={22} />
             </button>
             <button 
               type="button"
