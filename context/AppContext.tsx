@@ -37,8 +37,6 @@ export const AppProvider: React.FC<PropsWithChildren<{}>> = ({ children }) => {
   };
 
   // Initialize or Create House
-  // ⚡ AppContext.tsx에서 setupHouse 함수만 교체
-
 const setupHouse = async (userName: string, houseName: string) => {
   const user: User = {
     id: 'u_' + Math.random().toString(36).substr(2, 5),
@@ -47,7 +45,7 @@ const setupHouse = async (userName: string, houseName: string) => {
     isCurrentUser: true
   };
   
-  // ⚡ 1단계: 임시 ID 생성 (즉시)
+  // 1단계: 임시 ID 생성 (즉시)
   const tempHouseId = `${Date.now()}${Math.floor(Math.random() * 900 + 100)}`;
   
   const tempState = {
@@ -55,13 +53,13 @@ const setupHouse = async (userName: string, houseName: string) => {
     houseName,
     currentUser: user,
     roomies: [user],
-    houseId: tempHouseId // ⚡ 임시 ID 바로 설정
+    houseId: tempHouseId // 임시 ID 바로 설정
   };
 
-  // ⚡ 2단계: 즉시 state 업데이트 (사용자는 바로 다음 단계로)
+  // 2단계: 즉시 state 업데이트 (사용자는 바로 다음 단계로)
   setState(tempState);
 
-  // ⚡ 3단계: 백그라운드에서 백엔드 저장 (기다리지 않음)
+  // 3단계: 백그라운드에서 백엔드 저장 (기다리지 않음)
   createHouseInBackend(tempState).then((result) => {
     if (result.success && result.houseId) {
       console.log('[AppContext] ✅ House saved to backend:', result.houseId);

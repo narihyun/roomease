@@ -70,7 +70,6 @@ const Onboarding: React.FC = () => {
   // Step 4 (Memo) State
   const [inputMemo, setInputMemo] = useState('');
 
-  // ⚡ 최적화된 useEffect - 기존 Onboarding.tsx에서 이 부분만 교체
 
 useEffect(() => {
   // 이미 로드했으면 스킵
@@ -98,7 +97,7 @@ useEffect(() => {
   hasLoadedRef.current = true;
   setIsLoading(true);
   
-  // ⚡ 즉시 실행 - async/await 제거
+  // 즉시 실행 async/await 제거
   loadHouseData(sharedHouseId).then((success) => {
     if (!success) {
       console.error('[Onboarding] Failed to load house data');
@@ -109,7 +108,7 @@ useEffect(() => {
     }
 
     console.log('[Onboarding] ✅ Data loaded, moving to step 5');
-    // ⚡ 딜레이 없이 즉시 이동
+    // 딜레이 없이 즉시 이동
     setStep(5);
     setIsLoading(false);
   }).catch((error) => {
@@ -120,7 +119,7 @@ useEffect(() => {
   });
 }, [location.search, location.hash, loadHouseData]);
 
-  // ✅ 수정: local state 업데이트 - 별도 useEffect
+  // local state 업데이트
   useEffect(() => {
     if (houseName && !inputHouseName) {
       console.log('[Onboarding] Updating inputHouseName:', houseName);
@@ -140,7 +139,7 @@ useEffect(() => {
       console.log('[Onboarding] Setting default assignee:', roomies[0].id);
       setSelectedAssignees([roomies[0].id]);
     }
-  }, [houseName, houseMemo, currentUser, roomies]); // 이건 그대로 유지
+  }, [houseName, houseMemo, currentUser, roomies]);
 
   const handleStep1 = async () => {
   if (myName && inputHouseName) {
@@ -149,8 +148,8 @@ useEffect(() => {
       updateHouseInfo(myName, inputHouseName);
       setStep(2);
     } else {
-      // ⚡ Create 모드 - 로딩 없이 즉시 이동
-      setupHouse(myName, inputHouseName); // await 제거!
+      // Create 모드 - 로딩 없이 즉시 이동
+      setupHouse(myName, inputHouseName);
       setStep(2); // 바로 다음 단계로
     }
   }

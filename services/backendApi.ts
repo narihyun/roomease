@@ -40,7 +40,7 @@ export const createHouseInBackend = async (data: Partial<AppState>) => {
     const numericId = Number(houseId); // timestamp-based id should fit in JS number
     const rowPayload = {
       id: numericId,           // <- 반드시 추가: GAS _read에서 record.id와 비교
-      house_id: houseId,      // <- 기존 컬럼명도 유지 (안정성)
+      house_id: houseId,      // <- 기존 컬럼명 유지
       data: JSON.stringify(stateToStore),
       updated_at: new Date().toLocaleString('ko-KR')
     };

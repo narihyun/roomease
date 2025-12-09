@@ -95,7 +95,7 @@ const Landing: React.FC = () => {
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             <button onClick={startOnboarding} className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full text-lg font-bold shadow-xl shadow-green-200 transition-all hover:scale-105 flex items-center justify-center gap-2 ring-4 ring-green-100">
-              지금 우리 방 규칙 만들기 <ArrowRight size={22} />
+              지금 우리 방 약속 만들기 <ArrowRight size={22} />
             </button>
             <button 
               type="button"
@@ -205,7 +205,7 @@ const Landing: React.FC = () => {
                          <Shield size={24} />
                        </div>
                        <div>
-                          <h4 className="font-bold text-secondary text-lg">감정 소모 없는 규칙 관리</h4>
+                          <h4 className="font-bold text-secondary text-lg">감정 소모 없는 약속 관리</h4>
                           <p className="text-sm text-gray-500 mt-1">누가 했는지 안 했는지, 앱이 객관적으로 기록하고 알려줍니다.</p>
                        </div>
                     </div>
@@ -231,7 +231,7 @@ const Landing: React.FC = () => {
                  
                  <div className="mt-10">
                     <button onClick={startOnboarding} className="bg-secondary text-white px-8 py-4 rounded-xl font-bold hover:bg-gray-800 transition-all flex items-center gap-2 shadow-xl shadow-gray-200 w-full sm:w-auto justify-center ring-4 ring-gray-100">
-                       <Sparkles size={20} className="text-yellow-300"/> 무료로 우리 방 규칙 만들기
+                       <Sparkles size={20} className="text-yellow-300"/> 무료로 우리 방 약속 만들기
                     </button>
                     <p className="mt-3 text-xs text-gray-400 text-center sm:text-left font-medium">
                       * 3분이면 룸메이트와 공유할 수 있는 '생활 약속'이 완성돼요.
@@ -253,7 +253,7 @@ const Landing: React.FC = () => {
              💌 여러분의 목소리가 필요해요
           </div>
           
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">런칭 소식을 가장 먼저 받아보세요!</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">정식 런칭 소식을 가장 먼저 받아보세요!</h2>
           <p className="text-gray-300 mb-10 text-lg leading-relaxed">
             룸이즈는 아직 성장 중입니다.<br/>
             여러분의 소중한 피드백으로 더 나은 기숙사 생활을 만들어갈게요.<br/>
