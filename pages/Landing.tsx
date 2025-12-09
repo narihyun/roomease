@@ -81,7 +81,7 @@ const Landing: React.FC = () => {
           </div>
           
           <h1 className="text-4xl sm:text-6xl font-black text-secondary leading-tight mb-8 break-keep animate-fade-in-up drop-shadow-sm" style={{ animationDelay: '0.1s' }}>
-            "친한 친구랑 같이 살면"<br />
+            "친구랑 같이 살면"<br />
             <span className="relative inline-block text-primary z-10">
               <span className="relative z-10">무조건 싸운다?</span>
               <span className="absolute bottom-1 left-0 w-full h-4 bg-green-200/50 -z-10 -rotate-1"></span>
@@ -123,7 +123,7 @@ const Landing: React.FC = () => {
           <div className="text-center mb-16">
             <h2 className="text-primary font-black tracking-widest uppercase mb-3 text-sm bg-green-100 inline-block px-3 py-1 rounded-lg">Silent Stress</h2>
             <h3 className="text-3xl font-bold text-secondary">
-               이런 고민, 기숙사생이라면 다들 하잖아요.
+               이런 고민, 혼자만 하는 게 아니에요.
             </h3>
           </div>
 
@@ -135,7 +135,7 @@ const Landing: React.FC = () => {
                 <p className="text-gray-500 text-sm leading-relaxed">
                    좁은 방이라 더 잘 보이는데,<br/>
                    매번 내가 치우자니 왠지 모르게 <span className="font-bold text-green-600 bg-green-50 px-1">손해 보는 기분.</span><br/>
-                   점호 날만 되면 눈치 게임 시작이죠?
+                   묘하게 늘 눈치 게임 시작이죠?
                 </p>
              </div>
 
@@ -191,7 +191,7 @@ const Landing: React.FC = () => {
                  <h2 className="text-primary font-black mb-3 tracking-widest uppercase text-sm">RoomEase Solution</h2>
                  <h3 className="text-3xl sm:text-4xl font-black text-secondary mb-6 leading-tight">
                    하기 힘든 말은 <span className="text-primary underline decoration-green-200 decoration-4 underline-offset-4">룸이즈</span>가 할게요.<br/>
-                   퇴사할 때까지 웃으면서 지내요.
+                   퇴실할 때까지 웃으면서 지내요.
                  </h3>
                  <p className="text-gray-500 mb-8 text-lg leading-relaxed">
                    룸메이트에게 "청소 좀 해"라고 말하는 건 어렵죠.<br/>
@@ -287,7 +287,7 @@ const Landing: React.FC = () => {
                 <textarea 
                   value={advice}
                   onChange={(e) => setAdvice(e.target.value)}
-                  placeholder="응원, 기능 제안, 혹은 현재 겪고 있는 룸메이트 고충을 자유롭게 적어주세요. (큰 힘이 됩니다!)"
+                  placeholder="응원, 기능 제안, 혹은 현재 겪고 있는 룸메이트 고충을 자유롭게 적어주세요. 추첨하여 기프티콘을 드립니다 🎁"
                   className="w-full px-5 py-4 rounded-xl text-gray-900 bg-white focus:outline-none focus:ring-4 focus:ring-primary/50 h-32 resize-none shadow-inner placeholder:text-gray-400 border border-gray-100"
                 />
               </div>

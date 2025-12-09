@@ -366,7 +366,7 @@ useEffect(() => {
                   type="text" 
                   value={myName}
                   onChange={(e) => setMyName(e.target.value)}
-                  placeholder="예: 수빈"
+                  placeholder="예: 루미"
                   className="w-full text-lg border-b-2 border-gray-200 py-2 focus:outline-none focus:border-primary transition-colors bg-transparent placeholder-gray-300"
                 />
               </div>
@@ -376,7 +376,7 @@ useEffect(() => {
                   type="text" 
                   value={inputHouseName}
                   onChange={(e) => setInputHouseName(e.target.value)}
-                  placeholder="예: 신촌 해피하우스"
+                  placeholder="예: 해피하우스"
                   className="w-full text-lg border-b-2 border-gray-200 py-2 focus:outline-none focus:border-primary transition-colors bg-transparent placeholder-gray-300"
                 />
               </div>
